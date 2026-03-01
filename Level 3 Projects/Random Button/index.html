@@ -1,0 +1,46 @@
+<!-- Tell the browser to use modern HTML5 -->
+<!DOCTYPE html>
+<!-- Root element
+ set the language to English to help
+ accessibility tools -->
+<html lang="en">
+<!--Anything not visible to the user lives-->
+<head>
+  <!-- Use UTF‑8 so all characters/symbols
+   render correctly -->
+  <meta charset="UTF-8" />
+  <!-- Make the layout responsive on phones/tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- The title that shows on the browser tab -->
+  <title>Unbeatable Button</title>
+  <!-- Link to the external CSS file that styles the page -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Load the JavaScript file after HTML is parsed
+   to avoid missing-element errors -->
+  <script src="app.js" defer></script>
+</head>
+<!-- Visible page content starts here -->
+<body>
+    <!-- Container for the game area; positioned and sized by CSS -->
+    <!-- aria-label gives an accessible name for screen readers -->
+    <div class="arena" aria-label="Play area for the moving button">
+    <!-- Small heads-up display that shows stats to the user -->
+    <div class="hud">
+        <!-- Label for the move counter -->
+      <span>Moves:
+        <!-- Bold number we will update from JavaScript -->
+        <strong id="moves">0</strong>
+      </span>
+      <!-- Label for the current interaction mode (hover or click) -->
+      <span>Mode:
+        <!-- Bold text we will update from JavaScript -->
+        <strong id="mode">hover</strong>
+      </span>
+    </div>
+    <!-- The interactive button that moves around the arena -->
+    <!-- id lets JavaScript select it
+     aria-live announces text changes politely -->
+    <button id="chaosBtn" aria-live="polite">Catch me!</button>
+    </div>
+</body>
+</html>

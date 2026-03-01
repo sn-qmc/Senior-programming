@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0"/>
+        <title>Digital Flashcards</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Digital Flashcards</h1>
+            <p class="subtitle">Click the button to reveal the answer</p>
+        </header>
+        <main>
+            <section class="flashcard">
+                <h2 id="question">
+                    What does DOM stand for?
+                </h2>
+                <p id="answer" class="hidden">
+                    Document Object Model
+                </p>
+                <button id="toggleAnswerButton" type="button">
+                    Show answer
+                </button>
+                <div class="controls">
+                    <button id="prevButton" class="secondary" type="button">
+                        Previous
+                    </button>
+                    <button id="nextButton" class="secondary" type="button">
+                        Next
+                    </button>
+                </div>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

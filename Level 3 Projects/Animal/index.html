@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Red Panda — Interactive Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="theme.js"></script>
+  <script defer src="quiz.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Red Panda</h1>
+      <button id="themeToggle" class="btn">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero card">
+      <div class="hero-text">
+        <h2>About the Red Panda</h2>
+        <p class="lead">A small mammal from the eastern Himalayas and southwestern China.</p>
+      </div>
+      <figure class="hero-media">
+        <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/5/50/RedPandaFullBody.JPG" alt="Red Panda" />
+        <figcaption class="caption">Photo: Wikimedia</figcaption>
+      </figure>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="card">
+      <h2>Red Panda Quiz</h2>
+      <p class="hint">Press Start to begin.</p>
+
+      <div id="quizArea" hidden>
+        <p id="qText"></p>
+        <div id="answers"></div>
+        <button id="next" class="btn" hidden>Next</button>
+      </div>
+
+      <div class="actions">
+        <button id="startQuiz" class="btn btn-primary">Start Quiz</button>
+      </div>
+
+      <p id="score" class="score"></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 Red Panda Page</small>
+    </div>
+  </footer>
+</body>
+</html>

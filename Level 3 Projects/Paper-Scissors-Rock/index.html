@@ -1,0 +1,73 @@
+<!-- Use modern HTML parsing rules -->
+<!DOCTYPE html>
+<!-- Root element with language set for accessibility tools -->
+<html lang="en">
+<head>
+  <!-- Ensure all characters render correctly -->
+  <meta charset="UTF-8" />
+  <!-- Make layout scale to device width on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Title shown on the browser tab -->
+  <title>Rock Paper Scissors</title>
+
+  <!-- Link the external stylesheet that controls presentation -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Load the JavaScript file after HTML is parsed to avoid null element errors -->
+  <script src="app.js" defer></script>
+</head>
+
+<!-- Visible and interactive content -->
+<body>
+  <!-- Main card container for layout and focus of the application -->
+  <div class="card" role="application" aria-label="Rock Paper Scissors game">
+    <!-- Main heading that describes the page content -->
+    <h1>Rock Paper Scissors</h1>
+
+    <!-- Score display region with live updates for accessibility -->
+    <div class="score" aria-live="polite">
+      <!-- Shows the player score with a strong tag to emphasize the value -->
+      <span>Player: <strong id="pScore">0</strong></span>
+      <!-- Shows the computer score with a strong tag to emphasize the value -->
+      <span>Computer: <strong id="cScore">0</strong></span>
+      <!-- Shows the number of rounds that have been played -->
+      <span>Rounds: <strong id="rounds">0</strong></span>
+      <!-- Shows the target wins needed to end the match -->
+      <span>Target wins: <strong id="target">5</strong></span>
+    </div>
+
+    <!-- Instructional text to guide first time users -->
+    <p class="muted">First to the target wins. Choose Rock, Paper, or Scissors.</p>
+
+    <!-- Button grid where the player chooses a move -->
+    <div class="arena">
+      <!-- Button for choosing Rock. The data attribute is used by JS to read the choice -->
+      <button class="pick" data-move="rock" aria-label="Pick Rock">Rock</button>
+      <!-- Button for choosing Paper -->
+      <button class="pick" data-move="paper" aria-label="Pick Paper">Paper</button>
+      <!-- Button for choosing Scissors -->
+      <button class="pick" data-move="scissors" aria-label="Pick Scissors">Scissors</button>
+    </div>
+
+    <!-- Result panel where round outcomes and game summary are announced -->
+    <div id="result" class="result" aria-live="polite"></div>
+
+    <!-- Controls for resetting the game and selecting match length -->
+    <div class="controls">
+      <!-- Reset button keeps the same target wins but clears scores and rounds -->
+      <button id="reset" class="pick" aria-label="Reset the game">Reset</button>
+      <!-- Quick preset for a shorter match, first to 2 approximates best of 3 -->
+      <button id="bestOf3" class="pick" aria-label="Set target wins to 2">Best of 3</button>
+      <!-- Quick preset for a longer match, first to 3 approximates best of 5 -->
+      <button id="bestOf5" class="pick" aria-label="Set target wins to 3">Best of 5</button>
+      <!-- Full length preset, first to 5 wins -->
+      <button id="firstTo5" class="pick" aria-label="Set target wins to 5">First to 5</button>
+    </div>
+
+    <!-- Optional hint text that explains keyboard shortcuts for accessibility -->
+    <p class="muted small">
+      Keyboard shortcuts. Press 1 for Rock, 2 for Paper, 3 for Scissors. Press R to reset. Press T to change target.
+    </p>
+  </div>
+</body>
+</html>

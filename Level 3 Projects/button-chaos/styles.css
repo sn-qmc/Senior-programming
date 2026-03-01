@@ -1,0 +1,81 @@
+/* Base page layout: make the page full height */
+body {
+/* Use full viewport height so the arena can center nicely */
+  height: 100vh;
+/* Remove default margins from the body */
+  margin: 0;
+/* Use CSS grid to easily center the arena */
+  display: grid;
+/* Center the arena horizontally and vertically */
+  place-items: center;
+/* Light background colour for contrast */
+  background: #f4f6fb;
+/* Clean, readable system font stack */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* The “play area” that contains the moving button */
+.arena {
+/* Establish a positioning context for absolutely positioned children */
+  position: relative;
+/* Responsive width: the smaller of 90% of viewport width or 800px */
+  width: min(90vw, 800px);
+/* Responsive height: the smaller of 70% of viewport height or 500px */
+  height: min(70vh, 500px);
+/* Dashed border to make the play area obvious */
+  border: 3px dashed #7b8ab8;
+/* Rounded corners for a friendlier look */
+  border-radius: 14px;
+/* White background inside the arena */
+  background: #fff;
+/* Hide anything that would overflow (keeps button fully inside) */
+  overflow: hidden;
+}
+
+/* The chaos button itself */
+#chaosBtn {
+/* Allow manual positioning with left/top (set via JS) */
+  position: absolute;
+/* Padding to make the button easy to click */
+  padding: 14px 20px;
+/* Slightly larger text for readability */
+  font-size: 1.1rem;
+/* Remove the default button border */
+  border: 0;
+/* Rounded corners for the button */
+  border-radius: 10px;
+/* White text for contrast against the gradient */
+  color: white;
+/* Attractive gradient background */
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+/* Pointer cursor to indicate clickability */
+  cursor: pointer;
+/* Smooth tiny press animation on interaction */
+  transition: transform 80ms ease;
+/* Soft shadow for depth */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* When the button is actively being clicked */
+#chaosBtn:active {
+/* Slightly shrink to give tactile feedback */
+  transform: scale(0.96);
+}
+
+/* Heads-up display for moves and mode */
+.hud {
+/* Position HUD inside the arena, not in the document flow */
+  position: absolute;
+/* Offset from the top edge of the arena */
+  top: 8px;
+/* Offset from the left edge of the arena */
+  left: 12px;
+/* Slightly smaller text so it doesn’t dominate */
+  font-size: 0.95rem;
+/* Dark slate text colour */
+  color: #334155;
+/* Lay out HUD items in a row */
+  display: flex;
+/* Space between HUD items */
+  gap: 1rem;
+}

@@ -1,0 +1,185 @@
+/* Set up a clean base layout that centers the main card on the page */
+body {
+/* Remove default margins that can create unwanted spacing */
+  margin: 0;
+/* Ensure the body is at least the full viewport height for vertical centering */
+  min-height: 100vh;
+/* Use CSS Grid to center content both horizontally and vertically */
+  display: grid;
+/* Align the single child, the card, to the center of the grid area */
+  place-items: center;
+/* Set a subtle gradient background for visual depth */
+  background: linear-gradient(180deg, #0e1325, #0a0f20);
+/* Choose an accessible, legible font stack that works across platforms */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+/* Use a high contrast default text color */
+  color: #e6e8ee;
+}
+
+/* Style the main card that contains the game UI */
+.card {
+/* Limit width for readability and responsiveness */
+  width: min(800px, 92vw);
+/* Add interior padding so content does not touch edges */
+  padding: 20px;
+/* Rounded corners help differentiate the card from the background */
+  border-radius: 16px;
+/* Use a subtle border to define the card boundary */
+  border: 1px solid #24324d;
+/* Use a layered background for a refined look */
+  background:
+    linear-gradient(180deg, #0f172a, #0f172a) padding-box,
+    linear-gradient(135deg, #2a3a5f, #1b2a44) border-box;
+/* Add a soft drop shadow to lift the card from the page */
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Reduce default margins on the heading for tighter layout */
+h1 {
+/* Remove top margin to avoid extra space at the top of the card */
+  margin-top: 0;
+/* Use a moderate bottom margin to separate from the score area */
+  margin-bottom: 10px;
+/* Increase font weight for clarity */
+  font-weight: 700;
+}
+
+/* Style the score line with flexible wrapping and spacing */
+.score {
+/* Use flexbox for a responsive horizontal layout */
+  display: flex;
+/* Allow items to wrap when the viewport is narrow */
+  flex-wrap: wrap;
+/* Add space between items for legibility */
+  gap: 1rem;
+/* Slightly reduce the emphasis compared with main text */
+  opacity: 0.95;
+/* Add a small bottom margin to separate from the instructions */
+  margin-bottom: 10px;
+}
+
+/* Muted text style for helper instructions and hints */
+.muted {
+/* Slightly lower contrast for secondary information */
+  color: #c9ceda;
+/* Reduce top and bottom margins to align with compact layout */
+  margin: 4px 0 10px 0;
+/* Slightly smaller text that remains readable */
+  font-size: 0.98rem;
+}
+
+/* Extra small helper text variant */
+.small {
+/* Reduce font size further for minor hints */
+  font-size: 0.9rem;
+/* Lower the opacity a bit more to deemphasize */
+  opacity: 0.85;
+}
+
+/* Grid layout for the choice buttons */
+.arena {
+/* Display as grid to make buttons align and wrap nicely */
+  display: grid;
+/* Add spacing between buttons */
+  gap: 14px;
+/* Use responsive columns that fit between 140px and available space */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+/* Add a top margin to separate from the instructions */
+  margin-top: 14px;
+}
+
+/* Shared button styling for choices and control buttons */
+.pick {
+/* Remove default border style for a clean look */
+  border: 0;
+/* Slight rounding for a modern button shape */
+  border-radius: 12px;
+/* Internal padding for comfortable click targets */
+  padding: 14px 16px;
+/* Use background color that contrasts with card but fits palette */
+  background: #121a30;
+/* Use a clear text color on the dark button background */
+  color: #e6e8ee;
+/* Slightly increase text size for readability */
+  font-size: 1rem;
+/* Show pointer cursor to indicate interactivity */
+  cursor: pointer;
+/* Add subtle elevation */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+/* Animate background and transform for hover and active states */
+  transition: background 150ms ease, transform 80ms ease, box-shadow 150ms ease;
+}
+
+/* Hover state to provide feedback and affordance */
+.pick:hover {
+/* Lighten the background slightly to indicate hover */
+  background: #162241;
+/* Lift the button slightly to show interactivity */
+  transform: translateY(-2px);
+/* Increase shadow to reinforce the lifted look */
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Active state to simulate a press interaction */
+.pick:active {
+/* Slightly darken to indicate pressing */
+  background: #111a33;
+/* Lower the button to mimic a physical press */
+  transform: translateY(0);
+}
+
+/* Result panel where round outcomes and game end summaries appear */
+.result {
+/* Add a top margin to separate from choices */
+  margin-top: 14px;
+/* Provide interior spacing for text content */
+  padding: 12px 14px;
+/* Rounded corners consistent with overall style */
+  border-radius: 12px;
+/* Subtle border to define the panel */
+  border: 1px solid #1f2a44;
+/* Background that contrasts with the card but remains cohesive */
+  background: #0f172a;
+/* Ensure a minimum height so the panel does not collapse when empty */
+  min-height: 54px;
+/* Use grid gap when multiple lines are rendered */
+  display: grid;
+/* Small gap for stacked lines */
+  gap: 6px;
+}
+
+/* Container for the bottom control buttons */
+.controls {
+/* Use flexbox for natural wrapping and spacing */
+  display: flex;
+/* Allow wrapping when space is limited */
+  flex-wrap: wrap;
+/* Add gaps between control buttons */
+  gap: 10px;
+/* Add a top margin to separate from the result panel */
+  margin-top: 12px;
+}
+
+/* Visual states to highlight round outcomes in the result panel */
+.win {
+/* Subtle green tint with readable contrast for a positive result */
+  background: #102417;
+/* Border color communicates success state */
+  border-color: #1f8f56;
+}
+
+/* Visual state for a loss */
+.lose {
+/* Subtle red tint to indicate loss */
+  background: #281214;
+/* Border color communicates danger state */
+  border-color: #c34747;
+}
+
+/* Visual state for a draw */
+.draw {
+/* Subtle amber tint for neutral result */
+  background: #2a240f;
+/* Border color communicates neutral state */
+  border-color: #b98a2a;
+}
