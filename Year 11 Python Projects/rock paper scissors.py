@@ -49,7 +49,7 @@ def secretMenu():
     print("If you know the secret code enter it below\nElse\nType 'quit' to exit\n'menu' to return:")
     chosen = checkValidInput("", cheatOptions)
     if chosen == cheatOptions[0]:
-        print("Starting winners mode: ")
+        print("Starting ~~normal mode: ")
         play(1)
     else:
         print("Starting ~normal mode: ")
@@ -63,7 +63,7 @@ def play(game_type):
     print("Welcome to the Rock Paper Scissors\nAt any time you may return to the beginning by typing 'menu'\nor exit by typing in 'quit'")
     options = ["rock", "paper", "scissors"]
     max_rounds = getNumberOfRounds()
-    # Ceiling of max_rounds / 2 (wins needed to clinch match)
+    # Ceiling of max_rounds / 2 (wins needed to cinch match)
     wins_needed = max_rounds // 2 + 1
 
     counter = 1
