@@ -1,0 +1,131 @@
+ul.minibar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #11113f;
+  font-size: small;
+}
+
+li.minibar {
+  float: right;
+}
+
+li.minibar a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 3px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+
+li.minibar a:hover {
+    color: #dddddd;
+  background-color: #11113a;
+}
+
+ul.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-size: small;
+}
+
+li.header {
+  float: right;
+}
+
+li.header a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 3px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+
+li.header a:hover {
+    color: #dddddd;
+  background-color: #11113a;
+}
+
+body{
+    background-color: #aaaaaa;
+}
+
+.Btn {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #77530a,
+    #ffd277,
+    #77530a,
+    #77530a,
+    #ffd277,
+    #77530a
+  );
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+ul.header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10px;
+  background-color: #ffffff;
+  display: flex;
+  float: right;
+  align-items: center; /* vertical alignment */
+  gap: 10px;           /* space between buttons */
+}
+
+ul.header-L {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10px;
+  background-color: #ffffff;
+  display: flex;
+  float: left;
+  align-items: center; /* vertical alignment */
+  gap: 10px;           /* space between buttons */
+}
+
+.Btn::before {
+  position: absolute;
+  content: attr(data-text);
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(9, 33, 191, 0.842);
+}
+
+.Btn:hover {
+  background-position: right;
+}
+
+.Btn:hover::before {
+  background-position: right;
+}
+
+.Btn:active {
+  transform: scale(0.95);
+}

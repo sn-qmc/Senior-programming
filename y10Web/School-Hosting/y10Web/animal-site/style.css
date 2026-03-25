@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- Base styles ---------- */
+:root {
+    /* Theme (try changing these!) */
+    --bg: #0b1020;
+    --card: #0f162e;
+    --text: #e7eefc;
+    --muted: #a4b1d4;
+    --brand: #f97316;
+    /* orange */
+    --brand-2: #22c55e;
+    /* green accent for highlights */
+    --ring: 0 0 0 3px rgba(249, 115, 22, .25);
+    /* focus ring */
+    --shadow-1: 0 8px 24px rgba(2, 6, 23, .45);
+    --shadow-2: 0 12px 30px rgba(2, 6, 23, .55);
+    --radius: 16px;
+    --maxw: 1100px;
+    --gap: 1.5rem;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", system-ui, Arial, sans-serif;
+    background: radial-gradient(1200px 700px at 10% -10%, #152040, transparent) var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Containers and layout */
+.container {
+    width: min(92%, var(--maxw));
+    margin-inline: auto;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(11, 16, 32, .7);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #1b2445;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8rem 0;
+}
+
+.brand {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.nav {
+    display: flex;
+    gap: .5rem;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    padding: .5rem .85rem;
+    border-radius: 999px;
+    transition: .2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    border-color: #263155;
+    background: #0e1836;
+}
+
+.nav-link.active {
+    border-color: #2a365f;
+    background: #101d41;
+}
+
+/* ---------- Cards / visual style ---------- */
+.card {
+    background: linear-gradient(180deg, #101a3a, #0f162e 40%);
+    border: 1px solid #1b2445;
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-1);
+}
+
+.highlight {
+    border-color: rgba(34, 197, 94, .45);
+    box-shadow: 0 10px 24px rgba(34, 197, 94, .15);
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: .4rem;
+}
+
+h2 {
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    margin-bottom: .4rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: .25rem;
+}
+
+.lead {
+    color: var(--muted);
+    margin-top: .2rem;
+}
+
+/* ---------- Hero section ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: var(--gap);
+    margin: 1.5rem 0;
+}
+
+.hero-text {
+    align-self: center;
+}
+
+.hero-media {
+    margin: 0;
+}
+
+.hero-img {
+    width: 100%;
+    border-radius: calc(var(--radius) - 4px);
+    border: 3px solid #263155;
+    box-shadow: var(--shadow-2);
+    transform: translateZ(0);
+    /* improves animation smoothness */
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* ---------- SIMPLE HOVER EFFECT ON IMAGE ---------- */
+.hero-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .45);
+    border-color: var(--brand);
+}
+
+.caption {
+    margin-top: .4rem;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+/* ---------- Grid helpers ---------- */
+.grid {
+    display: grid;
+    gap: var(--gap);
+    margin: 1.5rem 0;
+}
+
+.grid.two {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ---------- Lists ---------- */
+.facts {
+    list-style: square inside;
+}
+
+.facts li+li {
+    margin-top: .35rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    margin: 2rem 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ---------- Accessibility: focus states ---------- */
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+}
+
+/* ---------- RESPONSIVENESS ---------- */
+/* Make layout fluid on small screens */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.two {
+        grid-template-columns: 1fr;
+    }
+}
